@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import { Avatar, Flex } from 'antd'
 
-interface Data {
+export interface Data {
   img?: string
   name: string
   job: string

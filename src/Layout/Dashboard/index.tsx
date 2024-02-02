@@ -1,9 +1,11 @@
-import { DatePicker, Flex, Space, Typography } from 'antd'
+import { Col, DatePicker, Flex, Row, Space, Typography } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons'
 import dayjs from 'dayjs'
 import './style.css'
 import { Link } from 'react-router-dom'
-import Workload from '../../common/Workload'
+import Workload from '../../common/Dashboard/Workload'
+import NearestEvents from '../../common/Dashboard/NearEvents'
+import { dataEv, info } from './data'
 
 const Dashboard = () => {
   const { Title, Text } = Typography
@@ -29,18 +31,62 @@ const Dashboard = () => {
             ]}
           />
         </Flex>
-
-        <div className='card__info'>
-          <div className='card__info__title'>
-            <h2 style={{ fontWeight: 600 }}>Workload</h2>
-            <Space>
-              <Link to={'/viewAll'}>
-                <Text type='secondary'>View All</Text>
-              </Link>
-              <ArrowRightOutlined />
-            </Space>
+        <div className='banner__dash'>
+          <div className='card__info'>
+            <div className='card__info__title'>
+              <h2 style={{ fontWeight: 600 }}>Workload</h2>
+              <Space>
+                <Link to={'/viewAll'}>
+                  <Text type='secondary'>View All</Text>
+                </Link>
+                <ArrowRightOutlined />
+              </Space>
+            </div>
+            <Row gutter={[16, 24]}>
+              {info.map((item, key) => (
+                <Col className='gutter-row' span={6}>
+                  <Workload
+                    key={key}
+                    name={item.name}
+                    job={item.job}
+                    level={item.level}
+                  />
+                </Col>
+              ))}
+            </Row>
           </div>
-          <Workload />
+          <div className='event__next'>
+            <Flex className='title__new' align='center' justify='space-between'>
+              <h2 style={{ fontWeight: 600 }}>Nearest Events</h2>
+              <Space>
+                <Link to={'/viewAll'}>
+                  <Text type='secondary'>View all</Text>
+                </Link>
+                <ArrowRightOutlined />
+              </Space>
+            </Flex>
+            {dataEv.map((item, key) => (
+              <NearestEvents
+                key={key}
+                titleBox={item.titleBox}
+                timeAndDate={item.timeAndDate}
+                time={item.time}
+                icon={item.icon}
+                img={item.img}
+                red={item.red}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className='project__dash'>
+          <h2 style={{ fontWeight: 600 }}>Workload</h2>
+          <Space>
+            <Link to={'/viewAll'}>
+              <Text type='secondary'>View All</Text>
+            </Link>
+            <ArrowRightOutlined />
+          </Space>
         </div>
       </div>
     </>

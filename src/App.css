@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.header__main {
+  background: white;
+  max-width: 1440px;
+  height: auto;
+}
+
+.content {
+  background: #f4f9fd;
+  max-width: 1440px;
+}
