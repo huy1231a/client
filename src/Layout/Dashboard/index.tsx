@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import { Col, DatePicker, Flex, Row, Space, Typography } from 'antd'
 import { ArrowRightOutlined } from '@ant-design/icons'
 import dayjs from 'dayjs'
@@ -5,7 +6,8 @@ import './style.css'
 import { Link } from 'react-router-dom'
 import Workload from '../../common/Dashboard/Workload'
 import NearestEvents from '../../common/Dashboard/NearEvents'
-import { dataEv, info } from './data'
+import { dataEv, info, projectData } from './data'
+import Project_Dash from './Project__Dash'
 
 const Dashboard = () => {
   const { Title, Text } = Typography
@@ -36,15 +38,15 @@ const Dashboard = () => {
             <div className='card__info__title'>
               <h2 style={{ fontWeight: 600 }}>Workload</h2>
               <Space>
-                <Link to={'/viewAll'}>
+                <Link to={'/dashboard/viewall'}>
                   <Text type='secondary'>View All</Text>
                 </Link>
                 <ArrowRightOutlined />
               </Space>
             </div>
-            <Row gutter={[16, 24]}>
+            <Row gutter={[60, 24]} style={{ margin: 'auto' }}>
               {info.map((item, key) => (
-                <Col className='gutter-row' span={6}>
+                <Col className='gutter-row' span={6} style={{ width: '25%' }}>
                   <Workload
                     key={key}
                     name={item.name}
@@ -79,14 +81,32 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className='project__dash'>
-          <h2 style={{ fontWeight: 600 }}>Workload</h2>
-          <Space>
-            <Link to={'/viewAll'}>
-              <Text type='secondary'>View All</Text>
-            </Link>
-            <ArrowRightOutlined />
-          </Space>
+        <div className='all'>
+          <div className='project__1'>
+            <div className='project__dash'>
+              <h2 style={{ fontWeight: 600 }}>Projects</h2>
+              <Space>
+                <Link to={'/viewAll'}>
+                  <Text type='secondary'>View All</Text>
+                </Link>
+                <ArrowRightOutlined />
+              </Space>
+            </div>
+            <div className='project__'>
+              {projectData.map((item, key) => (
+                <Project_Dash
+                  key={key}
+                  id={item.id}
+                  name={item.name}
+                  status={item.status}
+                  activeTask={item.activeTask}
+                  allTask={item.allTask}
+                  date={item.date}
+                />
+              ))}
+            </div>
+          </div>
+          <div className='left__project'>aaa</div>
         </div>
       </div>
     </>

@@ -3,6 +3,41 @@ import { Data } from '../../common/Dashboard/Workload'
 import { ClockCircleOutlined } from '@ant-design/icons'
 import medium from './image/medium.png'
 
+export interface ProjectData {
+  id: string
+  name: string
+  date: string
+  status: string
+  allTask: string
+  activeTask: string
+}
+export const projectData: ProjectData[] = [
+  {
+    id: 'PN0001265',
+    name: 'Medical App (iOS native)',
+    date: 'Created Sep 12, 2020',
+    status: 'Medium',
+    allTask: '34',
+    activeTask: '13',
+  },
+  {
+    id: 'PN0001221',
+    name: 'Food Delivery Service',
+    date: 'Created Sep 10, 2020',
+    status: 'Medium',
+    allTask: '50',
+    activeTask: '24',
+  },
+  {
+    id: 'PN0001290',
+    name: 'Food Delivery Service',
+    date: 'Created May 28, 2020',
+    status: 'Low',
+    allTask: '23',
+    activeTask: '20',
+  },
+]
+
 export const info: Data[] = [
   {
     name: 'Shawn Stone',

@@ -47,3 +47,7 @@
   background: #f4f9fd;
   max-width: 1440px;
 }
+
+.layout__full {
+  width: 100%;
+}
