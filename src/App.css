@@ -46,6 +46,7 @@
 .content {
   background: #f4f9fd;
   max-width: 1440px;
+  height: auto;
 }
 
 .layout__full {

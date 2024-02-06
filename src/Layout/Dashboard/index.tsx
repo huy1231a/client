@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-pascal-case */
-import { Col, DatePicker, Flex, Row, Space, Typography } from 'antd'
-import { ArrowRightOutlined } from '@ant-design/icons'
+import { Avatar, Col, DatePicker, Flex, Row, Space, Typography } from 'antd'
+import {
+  ArrowRightOutlined,
+  CloudDownloadOutlined,
+  CaretDownFilled,
+} from '@ant-design/icons'
 import dayjs from 'dayjs'
 import './style.css'
 import { Link } from 'react-router-dom'
@@ -61,7 +65,7 @@ const Dashboard = () => {
             <Flex className='title__new' align='center' justify='space-between'>
               <h2 style={{ fontWeight: 600 }}>Nearest Events</h2>
               <Space>
-                <Link to={'/viewAll'}>
+                <Link to={'/dashboard/viewall'}>
                   <Text type='secondary'>View all</Text>
                 </Link>
                 <ArrowRightOutlined />
@@ -106,7 +110,51 @@ const Dashboard = () => {
               ))}
             </div>
           </div>
-          <div className='left__project'>aaa</div>
+          <div className='left__project'>
+            <div className='left__out'>
+              <h2 style={{ fontWeight: 600 }}>Nearest Events</h2>
+              <div className='left__title'>
+                <Avatar style={{ width: 50, height: 50 }} />
+                <div className='left__job__name'>
+                  <span className='title'>Oscar Holloway</span>
+                  <Text type='secondary'>UI/UX Designer</Text>
+                </div>
+              </div>
+              <div className='left_1'>
+                <div className='contend__left1'>
+                  <CloudDownloadOutlined style={{ color: 'green' }} />
+                  <h5>
+                    Updated the status of Mind <br /> Map task to In Progress
+                  </h5>
+                </div>
+              </div>
+              <div className='left_1'>
+                <div className='contend__left1'>
+                  <CloudDownloadOutlined style={{ color: 'green' }} />
+                  <h5>Attached files to the task</h5>
+                </div>
+              </div>
+              <div className='left__title'>
+                <Avatar style={{ width: 50, height: 50 }} />
+                <div className='left__job__name'>
+                  <span className='title'>Oscar Holloway</span>
+                  <Text type='secondary'>UI/UX Designer</Text>
+                </div>
+              </div>
+              <div className='left_1'>
+                <div className='contend__left1'>
+                  <CloudDownloadOutlined style={{ color: 'green' }} />
+                  <h5>
+                    Updated the status of Mind <br /> Map task to In Progress
+                  </h5>
+                </div>
+              </div>
+
+              <Link to={'/dashboard/viewall'} className='href'>
+                <Text style={{ color: '#3F8CFF' }}>View All</Text>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

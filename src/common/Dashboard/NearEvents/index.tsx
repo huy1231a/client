@@ -2,6 +2,7 @@
 import { Flex, Typography } from 'antd'
 import './style.css'
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 export interface Events {
   titleBox: string
@@ -10,6 +11,7 @@ export interface Events {
   icon: React.ReactNode
   img: any
   red?: string
+  style?: React.CSSProperties
 }
 
 const NearestEvents: React.FC<Events> = ({
@@ -21,8 +23,17 @@ const NearestEvents: React.FC<Events> = ({
   red,
 }) => {
   const { Text, Title } = Typography
+  const location = useLocation()
+  console.log('location', location.pathname)
+
   return (
-    <div className='layout'>
+    <div
+      className='layout'
+      style={{
+        backgroundColor: `${location.pathname === '/dashboard' ? '' : 'white'}`,
+        width: `${location.pathname === '/dashboard' ? '' : '100%'}`,
+        padding: `${location.pathname === '/dashboard' ? '' : '30px'}`,
+      }}>
       <Flex justify='space-between' align='center' className='layout__ev'>
         <Flex align='center' gap={20}>
           <div

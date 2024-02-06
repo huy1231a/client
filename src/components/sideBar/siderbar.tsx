@@ -1,28 +1,41 @@
 import { useState } from 'react'
 import {
   CalendarOutlined,
-  DesktopOutlined,
-  FileOutlined,
   FlagOutlined,
   HomeOutlined,
   MessageOutlined,
-  PieChartOutlined,
   ProjectOutlined,
   MenuFoldOutlined,
   UserOutlined,
   UserSwitchOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons'
-import { Button, Layout, Menu, theme } from 'antd'
+import { Button, Layout, Menu, Modal, Typography, theme } from 'antd'
 import { Link } from 'react-router-dom'
 import type { MenuProps } from 'antd'
 import './style.css'
+import Support from '../../Layout/Dashboard/Model/support'
 
 const Siderbar = () => {
+  const { Text } = Typography
   const [collapsed, setCollapsed] = useState(false)
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken()
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const showModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleOk = () => {
+    setIsModalOpen(false)
+  }
+
+  const handleCancel = () => {
+    setIsModalOpen(false)
+  }
 
   const items: MenuProps['items'] = [
     {
@@ -60,6 +73,15 @@ const Siderbar = () => {
       icon: <UserSwitchOutlined />,
       label: <Link to={'/'}>Info Portal</Link>,
     },
+    {
+      key: '8',
+      icon: <UserSwitchOutlined />,
+      label: (
+        <Text style={{ color: 'white' }} onClick={showModal}>
+          Support
+        </Text>
+      ),
+    },
   ]
 
   const { Sider } = Layout
@@ -69,7 +91,9 @@ const Siderbar = () => {
       collapsible
       collapsed={collapsed}
       width={250}
-      className='siderBar'>
+      className='siderBar'
+      // style={{ height: '1450px' }}
+    >
       <div className='logo__side'>
         {!collapsed ? (
           <div className='logo'>ANT HUY</div>
@@ -93,6 +117,13 @@ const Siderbar = () => {
         items={items}
         className='menu'
       />
+      <Modal
+        title='Need some Help?'
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}>
+        <Support />
+      </Modal>
     </Sider>
   )
 }
