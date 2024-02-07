@@ -1,0 +1,61 @@
+.project__layout {
+  width: 100%;
+}
+
+.project__title {
+  padding: 10px;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project__content {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  /* padding: 10px; */
+  margin: 10px 20px;
+}
+
+.left__project__cot {
+  width: 25%;
+  height: 1400px;
+  border-radius: 24px;
+  background-color: white;
+}
+
+.right__project__cot {
+  width: 70%;
+  height: 1400px;
+  border-radius: 24px;
+}
+.menu__pro {
+  width: 100%;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background-color: transparent;
+}
+
+.item1 {
+  height: auto;
+}
+
+.menu__item {
+  width: '90%';
+  height: 'auto';
+}
+
+.contend__rig {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.btn-1 {
+  border: 2px solid white;
+}

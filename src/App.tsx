@@ -1,7 +1,7 @@
 import './App.css'
 import { Layout, Flex } from 'antd'
 import Siderbar from './components/sideBar/siderbar'
-import { Route, Router, Routes, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import HeaderC from './components/header/header'
 import ProjectPage from './pages/ProjectPage'
 import DashBoardPage from './pages/dashboard/DashBoardPage'

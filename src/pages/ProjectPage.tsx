@@ -1,14 +1,8 @@
 import React from 'react'
+import Project from '../Layout/Project'
 
 const ProjectPage = () => {
-  return (
-    <div>
-      <div className='home-page'>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is your dashboard home page.</p>
-      </div>
-    </div>
-  )
+  return <Project />
 }
 
 export default ProjectPage

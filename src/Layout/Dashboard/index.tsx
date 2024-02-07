@@ -1,10 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import { Avatar, Col, DatePicker, Flex, Row, Space, Typography } from 'antd'
-import {
-  ArrowRightOutlined,
-  CloudDownloadOutlined,
-  CaretDownFilled,
-} from '@ant-design/icons'
+import { ArrowRightOutlined, CloudDownloadOutlined } from '@ant-design/icons'
 import dayjs from 'dayjs'
 import './style.css'
 import { Link } from 'react-router-dom'
@@ -50,7 +46,10 @@ const Dashboard = () => {
             </div>
             <Row gutter={[60, 24]} style={{ margin: 'auto' }}>
               {info.map((item, key) => (
-                <Col className='gutter-row' span={6} style={{ width: '25%' }}>
+                <Col
+                  className='gutter-row'
+                  span={6}
+                  style={{ width: '33.33%' }}>
                   <Workload
                     key={key}
                     name={item.name}
@@ -112,7 +111,7 @@ const Dashboard = () => {
           </div>
           <div className='left__project'>
             <div className='left__out'>
-              <h2 style={{ fontWeight: 600 }}>Nearest Events</h2>
+              <h2 style={{ fontWeight: 600 }}>Activity Stream</h2>
               <div className='left__title'>
                 <Avatar style={{ width: 50, height: 50 }} />
                 <div className='left__job__name'>
