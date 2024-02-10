@@ -21,7 +21,7 @@ const ListTask: React.FC<TaskList> = ({
           <Title level={5}>{taskName}</Title>
         </div>
         <div className='layout__2'>
-          <Text type='secondary'>Estimate</Text>
+          {est && <Text type='secondary'>Estimate</Text>}
           <Title level={5}>{est}</Title>
         </div>
         <div className='layout__3'>
