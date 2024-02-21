@@ -1,0 +1,21 @@
+.board_Task {
+  width: 100%;
+}
+
+.board__top {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0 0 10px;
+}
+
+._1 {
+  width: 23%;
+  height: 58px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  border: 2px solid bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}

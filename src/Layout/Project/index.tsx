@@ -10,6 +10,7 @@ import './style.css'
 import { useEffect, useState } from 'react'
 import SubMenu from 'antd/es/menu/SubMenu'
 import ListItem from './list/list'
+import BoardTask from './common/boardTask'
 // import { Link } from 'react-router-dom'
 
 const Project = () => {
@@ -57,12 +58,12 @@ const Project = () => {
             mode='inline'
             openKeys={openKeys}
             onOpenChange={onOpenChange}
-            style={{ backgroundColor: 'white' }}
+            style={{ backgroundColor: 'transparent' }}
             className='menu__pro'>
             <SubMenu
               key='sub1'
               title='Current Projects'
-              style={{ backgroundColor: 'white' }}>
+              style={{ backgroundColor: 'transparent' }}>
               <Menu.Item
                 key='1'
                 style={{
@@ -214,7 +215,7 @@ const Project = () => {
             </div>
           </div>
           {activeItem === 1 && <ListItem />}
-          {activeItem === 2 && <List />}
+          {activeItem === 2 && <BoardTask />}
           {activeItem === 3 && <List />}
         </div>
       </div>
