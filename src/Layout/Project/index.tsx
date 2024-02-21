@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import SubMenu from 'antd/es/menu/SubMenu'
 import ListItem from './list/list'
 import BoardTask from './common/boardTask'
+import BoardList from './common/BoardList'
 // import { Link } from 'react-router-dom'
 
 const Project = () => {
