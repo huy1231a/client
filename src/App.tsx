@@ -1,5 +1,5 @@
 import './App.css'
-import { Layout, Flex } from 'antd'
+import { Layout, Flex, Typography } from 'antd'
 import Siderbar from './components/sideBar/siderbar'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import HeaderC from './components/header/header'
@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage'
 import ViewAllEvent from './pages/dashboard/viewAllEvents/ViewAllEvent'
 
 const { Header, Footer, Content } = Layout
+const { Text } = Typography
 
 function App() {
   const auth = true
@@ -30,7 +31,12 @@ function App() {
                     <Route path='/project' Component={ProjectPage} />
                   </Routes>
                 </Content>
-                <Footer>Footer</Footer>
+                <Footer>
+                  <div className='footer'>
+                    <Text type='secondary'>Design By nqHuy vjp</Text>
+                    <Text type='secondary'>taolahuy2k0@gmail.com</Text>
+                  </div>
+                </Footer>
               </Layout>
             </Layout>
           </Flex>

@@ -2,6 +2,8 @@ import { Button } from 'antd'
 import './style.css'
 import React from 'react'
 import TaskBoard from './dropfile'
+import { TASKS } from './data'
+import BackLock from '../BackLock'
 
 const BoardTask = () => {
   return (
@@ -20,7 +22,8 @@ const BoardTask = () => {
           Active Tasks
         </Button>
 
-        <TaskBoard />
+        <TaskBoard tasks={TASKS} />
+        <BackLock />
       </div>
     </>
   )

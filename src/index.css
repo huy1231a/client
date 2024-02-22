@@ -27,3 +27,9 @@ html {
   font-weight: 700;
   line-height: normal;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px 0 10px;
+}

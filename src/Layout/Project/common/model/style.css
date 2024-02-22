@@ -1,0 +1,33 @@
+.modal__full {
+  width: 100%;
+}
+
+.divider__modal {
+  width: 100%;
+  height: 1px;
+  background-color: #e4e6e8;
+}
+.select__m {
+  margin-top: 15px;
+}
+
+.seleceID {
+  margin: 5px 0px 25px 0px;
+}
+
+.task__group {
+  margin-top: 10px;
+}
+
+.check__box {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.check__box__2 {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}

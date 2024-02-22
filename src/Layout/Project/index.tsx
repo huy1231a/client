@@ -1,4 +1,4 @@
-import { Button, Flex, List, Menu, MenuProps, Typography } from 'antd'
+import { Button, Divider, Flex, Menu, MenuProps, Modal, Typography } from 'antd'
 import {
   PlusOutlined,
   DownloadOutlined,
@@ -11,10 +11,26 @@ import { useEffect, useState } from 'react'
 import SubMenu from 'antd/es/menu/SubMenu'
 import ListItem from './list/list'
 import BoardTask from './common/boardTask'
-import BoardList from './common/BoardList'
+import TimeLine from './timeline'
+import ModalLay from './common/model'
+import { Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 
 const Project = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const showModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleOk = () => {
+    setIsModalOpen(false)
+  }
+
+  const handleCancel = () => {
+    setIsModalOpen(false)
+  }
+
   useEffect(() => {
     setActiveItem(1)
   }, [])
@@ -50,7 +66,7 @@ const Project = () => {
           shape='round'
           icon={<PlusOutlined />}
           size={'large'}>
-          Add Event
+          Add Project
         </Button>
       </div>
       <div className='project__content'>
@@ -82,6 +98,9 @@ const Project = () => {
                   <span style={{ fontWeight: 700 }}>
                     Medical App (iOS native)
                   </span>
+                  <Link to={'/dashboard/viewall'} className='href'>
+                    <Text style={{ color: '#3F8CFF' }}>View More</Text>
+                  </Link>
                   {/* <Flex gap={10}>
                     <Link to={'/details'}>
                       <Text type='secondary'>View All</Text>
@@ -90,6 +109,7 @@ const Project = () => {
                   </Flex> */}
                 </Flex>
               </Menu.Item>
+              <Divider />
               <Menu.Item
                 key='2'
                 style={{ width: '90%', height: 'auto', margin: '10px 10px' }}>
@@ -100,6 +120,9 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Food Delivery Service</span>
+                  <Link to={'/dashboard/viewall'} className='href'>
+                    <Text style={{ color: '#3F8CFF' }}>View More</Text>
+                  </Link>
                   {/* <Flex gap={10}>
                     <Link to={'/details'}>
                       <Text type='secondary'>View All</Text>
@@ -108,6 +131,7 @@ const Project = () => {
                   </Flex> */}
                 </Flex>
               </Menu.Item>
+              <Divider />
               <Menu.Item
                 key='3'
                 style={{ width: '90%', height: 'auto', margin: '10px 10px' }}>
@@ -118,6 +142,9 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Fortune website</span>
+                  <Link to={'/dashboard/viewall'} className='href'>
+                    <Text style={{ color: '#3F8CFF' }}>View More</Text>
+                  </Link>
                   {/* <Flex gap={10}>
                     <Link to={'/details'}>
                       <Text type='secondary'>View All</Text>
@@ -126,6 +153,7 @@ const Project = () => {
                   </Flex> */}
                 </Flex>
               </Menu.Item>
+              <Divider />
               <Menu.Item
                 key='4'
                 style={{ width: '90%', height: 'auto', margin: '10px 10px' }}>
@@ -136,6 +164,9 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Planner App</span>
+                  <Link to={'/dashboard/viewall'} className='href'>
+                    <Text style={{ color: '#3F8CFF' }}>View More</Text>
+                  </Link>
                   {/* <Flex gap={10}>
                     <Link to={'/details'}>
                       <Text type='secondary'>View All</Text>
@@ -144,6 +175,7 @@ const Project = () => {
                   </Flex> */}
                 </Flex>
               </Menu.Item>
+              <Divider />
               <Menu.Item
                 key='5'
                 style={{ width: '90%', height: 'auto', margin: '10px 10px' }}>
@@ -156,6 +188,9 @@ const Project = () => {
                   <span style={{ fontWeight: 700 }}>
                     Time tracker - personal <br /> account
                   </span>
+                  <Link to={'/dashboard/viewall'} className='href'>
+                    <Text style={{ color: '#3F8CFF' }}>View More</Text>
+                  </Link>
                   {/* <Flex gap={10}>
                     <Link to={'/details'}>
                       <Text type='secondary'>View All</Text>
@@ -164,6 +199,7 @@ const Project = () => {
                   </Flex> */}
                 </Flex>
               </Menu.Item>
+              <Divider />
               <Menu.Item
                 key='6'
                 style={{ width: '90%', height: 'auto', margin: '10px 10px' }}>
@@ -174,6 +210,9 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Internal Project</span>
+                  <Link to={'/dashboard/viewall'} className='href'>
+                    <Text style={{ color: '#3F8CFF' }}>View More</Text>
+                  </Link>
                   {/* <Flex gap={10}>
                     <Link to={'/details'}>
                       <Text type='secondary'>View All</Text>
@@ -182,6 +221,7 @@ const Project = () => {
                   </Flex> */}
                 </Flex>
               </Menu.Item>
+              <Divider />
             </SubMenu>
           </Menu>
         </div>
@@ -212,12 +252,34 @@ const Project = () => {
               />
             </Flex>
             <div>
-              <Button type='primary' icon={<FilterOutlined />} size={'large'} />
+              <Button
+                type='primary'
+                icon={<FilterOutlined />}
+                size={'large'}
+                onClick={showModal}
+              />
             </div>
           </div>
           {activeItem === 1 && <ListItem />}
           {activeItem === 2 && <BoardTask />}
-          {activeItem === 3 && <List />}
+          {activeItem === 3 && <TimeLine />}
+
+          <Modal
+            title='Filters'
+            open={isModalOpen}
+            style={{ left: 670, height: 1498 }}
+            onCancel={handleCancel}
+            width={413}
+            footer={[
+              <Button key='back' onClick={handleCancel}>
+                Close
+              </Button>,
+              <Button key='submit' type='primary' onClick={handleOk}>
+                Save in Filters
+              </Button>,
+            ]}>
+            <ModalLay />
+          </Modal>
         </div>
       </div>
     </div>

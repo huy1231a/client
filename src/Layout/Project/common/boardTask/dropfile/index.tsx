@@ -1,88 +1,230 @@
 import React, { useState } from 'react'
-import { List, message } from 'antd'
+import { Typography } from 'antd'
+import './style.css'
 
-interface Task {
+export interface Task {
   id: string
-  content: string
+  name?: string
+  idTask?: string
+  level?: string
+  status: string
+  image: any
+  time: string
+  days: string
+  icon?: any
 }
 
-const initialTasks: Task[] = [
-  { id: 'task-1', content: 'Task 1' },
-  { id: 'task-2', content: 'Task 2' },
-  { id: 'task-3', content: 'Task 3' },
-]
+const TaskBoard: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
+  const { Text } = Typography
+  const [taskList, setTaskList] = useState<Task[]>(tasks)
 
-const TaskBoard: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>(initialTasks)
-  const [newBoxTasks, setNewBoxTasks] = useState<Task[]>([])
+  const onDragStart = (evt: React.DragEvent<HTMLDivElement>) => {
+    let element = evt.currentTarget
+    element.classList.add('dragged')
+    evt.dataTransfer.setData('text/plain', evt.currentTarget.id)
+    evt.dataTransfer.effectAllowed = 'move'
+  }
 
-  const onDragStart = (e: React.DragEvent<HTMLDivElement>, task: Task) => {
-    e.dataTransfer.setData('task', JSON.stringify(task))
-    e.currentTarget.classList.add('dragging')
+  const onDragEnd = (evt: React.DragEvent<HTMLDivElement>) => {
+    evt.currentTarget.classList.remove('dragged')
+  }
+
+  const onDragEnter = (evt: React.DragEvent<HTMLDivElement>) => {
+    evt.preventDefault()
+    let element = evt.currentTarget
+    element.classList.add('dragged-over')
+    evt.dataTransfer.dropEffect = 'move'
+  }
+
+  const onDragLeave = (evt: React.DragEvent<HTMLDivElement>) => {
+    let currentTarget = evt.currentTarget
+    let newTarget = evt.relatedTarget as HTMLElement
+    if (newTarget?.parentNode === currentTarget || newTarget === currentTarget)
+      return
+    evt.preventDefault()
+    let element = evt.currentTarget
+    element.classList.remove('dragged-over')
+  }
+
+  const onDragOver = (evt: React.DragEvent<HTMLDivElement>) => {
+    evt.preventDefault()
+    evt.dataTransfer.dropEffect = 'move'
   }
 
   const onDrop = (
-    e: React.DragEvent<HTMLDivElement>,
-    target: 'tasks' | 'newBox'
+    evt: React.DragEvent<HTMLDivElement>,
+    value: boolean,
+    status: string
   ) => {
-    e.preventDefault()
-    const droppedTask = JSON.parse(e.dataTransfer.getData('task')) as Task
-    e.currentTarget.classList.remove('dragging')
-
-    if (target === 'tasks') {
-      setTasks((prevTasks) => [...prevTasks, droppedTask])
-      message.success('Task moved to tasks successfully')
-    } else if (target === 'newBox') {
-      setNewBoxTasks((prevTasks) => [...prevTasks, droppedTask])
-      message.success('Task moved to new box successfully')
-    }
+    evt.preventDefault()
+    evt.currentTarget.classList.remove('dragged-over')
+    let data = evt.dataTransfer.getData('text/plain')
+    let updated = taskList.map((task) => {
+      if (task.id.toString() === data.toString()) {
+        task.status = status
+      }
+      return task
+    })
+    setTaskList(updated)
   }
-
-  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-  }
+  let pending = tasks.filter((data) => data.status === 'In Progress')
+  let done = tasks.filter((data) => data.status === 'Done')
+  let newOrder = tasks.filter((data) => data.status === 'To Do')
+  let waiting = tasks.filter((data) => data.status === 'In Review')
 
   return (
-    <div>
+    <div className='container'>
       <div
-        onDrop={(e) => onDrop(e, 'newBox')}
-        onDragOver={onDragOver}
-        style={{
-          border: '1px dashed #ccc',
-          padding: '20px',
-          marginBottom: '20px',
-        }}>
-        <h3>New Box</h3>
-        <List
-          dataSource={newBoxTasks}
-          renderItem={(item: Task) => (
-            <List.Item key={item.id}>{item.content}</List.Item>
-          )}
-        />
-      </div>
-      <div
-        onDrop={(e) => onDrop(e, 'tasks')}
-        onDragOver={onDragOver}
-        style={{
-          border: '1px dashed #ccc',
-          padding: '20px',
-          marginBottom: '20px',
-        }}>
-        <h3>Tasks</h3>
-        <List
-          dataSource={tasks}
-          renderItem={(item: Task) => (
-            <div key={item.id}>
-              <div
-                draggable
-                onDragStart={(e) => onDragStart(e, item)}
-                onDragEnd={(e) => e.currentTarget.classList.remove('dragging')}
-                className='draggable-task'>
-                {item.content}
+        className='order small-box'
+        onDragLeave={(e) => onDragLeave(e)}
+        onDragEnter={(e) => onDragEnter(e)}
+        onDragEnd={(e) => onDragEnd(e)}
+        onDragOver={(e) => onDragOver(e)}
+        onDrop={(e) => onDrop(e, false, 'To Do')}>
+        <section className='drag_container'>
+          <div className='container'>
+            <div className='drag_column'>
+              <div className='drag_row'>
+                {newOrder.map((task) => (
+                  <div
+                    className='card'
+                    key={task.name}
+                    id={task.id}
+                    draggable
+                    onDragStart={(e) => onDragStart(e)}
+                    onDragEnd={(e) => onDragEnd(e)}>
+                    <div className='title'>
+                      <div>
+                        <div>{task.idTask}</div>
+                        <Text type='secondary'>{task.name}</Text>
+                      </div>
+                      <div>{task.image}</div>
+                      <div className='contend__task'>
+                        <div className='status'>{task.status}</div>
+                        <div className='days'>{task.time}</div>
+                        <div className='time'>{task.days}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          )}
-        />
+          </div>
+        </section>
+      </div>
+      <div
+        className='pending small-box'
+        onDragLeave={(e) => onDragLeave(e)}
+        onDragEnter={(e) => onDragEnter(e)}
+        onDragEnd={(e) => onDragEnd(e)}
+        onDragOver={(e) => onDragOver(e)}
+        onDrop={(e) => onDrop(e, false, 'In Progress')}>
+        <section className='drag_container'>
+          <div className='container'>
+            <div className='drag_column'>
+              <div className='drag_row'>
+                {pending.map((task) => (
+                  <div
+                    className='card'
+                    key={task.name}
+                    id={task.id}
+                    draggable
+                    onDragStart={(e) => onDragStart(e)}
+                    onDragEnd={(e) => onDragEnd(e)}>
+                    <div className='title'>
+                      <div>
+                        <div>{task.idTask}</div>
+                        <Text type='secondary'>{task.name}</Text>
+                      </div>
+                      <div>{task.image}</div>
+                      <div className='contend__task'>
+                        <div className='status'>{task.status}</div>
+                        <div className='days'>{task.time}</div>
+                        <div className='time'>{task.days}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div
+        className='waiting small-box'
+        onDragLeave={(e) => onDragLeave(e)}
+        onDragEnter={(e) => onDragEnter(e)}
+        onDragEnd={(e) => onDragEnd(e)}
+        onDragOver={(e) => onDragOver(e)}
+        onDrop={(e) => onDrop(e, true, 'In Review')}>
+        <section className='drag_container'>
+          <div className='container'>
+            <div className='drag_column'>
+              <div className='drag_row'>
+                {waiting.map((task) => (
+                  <div
+                    className='card'
+                    key={task.name}
+                    id={task.id}
+                    draggable
+                    onDragStart={(e) => onDragStart(e)}
+                    onDragEnd={(e) => onDragEnd(e)}>
+                    <div className='title'>
+                      <div>
+                        <div>{task.idTask}</div>
+                        <Text type='secondary'>{task.name}</Text>
+                      </div>
+                      <div>{task.image}</div>
+                      <div className='contend__task'>
+                        <div className='status'>{task.status}</div>
+                        <div className='days'>{task.time}</div>
+                        <div className='time'>{task.days}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div
+        className='done small-box'
+        onDragLeave={(e) => onDragLeave(e)}
+        onDragEnter={(e) => onDragEnter(e)}
+        onDragEnd={(e) => onDragEnd(e)}
+        onDragOver={(e) => onDragOver(e)}
+        onDrop={(e) => onDrop(e, true, 'Done')}>
+        <section className='drag_container'>
+          <div className='container'>
+            <div className='drag_column'>
+              <div className='drag_row'>
+                {done.map((task) => (
+                  <div
+                    className='card'
+                    key={task.name}
+                    id={task.id}
+                    draggable
+                    onDragStart={(e) => onDragStart(e)}
+                    onDragEnd={(e) => onDragEnd(e)}>
+                    <div className='title'>
+                      <div>
+                        <div>{task.idTask}</div>
+                        <Text type='secondary'>{task.name}</Text>
+                      </div>
+                      <div>{task.image}</div>
+                      <div className='contend__task'>
+                        <div className='status'>{task.status}</div>
+                        <div className='days'>{task.time}</div>
+                        <div className='time'>{task.days}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   )
