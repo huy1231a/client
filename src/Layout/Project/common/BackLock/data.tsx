@@ -1,5 +1,6 @@
 import { Avatar } from 'antd'
 import { Task } from '../boardTask/dropfile'
+import { UserOutlined } from '@ant-design/icons'
 
 export const BackLockData: Task[] = [
   {
@@ -7,7 +8,7 @@ export const BackLockData: Task[] = [
     idTask: 'TS0001245',
     name: 'UX sketches',
     status: 'To Do',
-    image: <Avatar />,
+    image: <Avatar icon={<UserOutlined />} />,
     time: '8 hrs',
     days: '5 days left',
     level: 'Hard',
@@ -30,7 +31,7 @@ export const BackLockData: Task[] = [
     status: 'In Progress',
     name: 'Animation for Landing page',
     idTask: 'TS0001246',
-    image: <Avatar />,
+    image: <Avatar icon={<UserOutlined />} />,
     time: '6 hrs',
     days: '6 days left',
     level: 'Hard',
@@ -53,7 +54,7 @@ export const BackLockData: Task[] = [
     status: 'Done',
     idTask: 'TS0001247',
     name: 'Preloader',
-    image: <Avatar />,
+    image: <Avatar icon={<UserOutlined />} />,
     time: '13 hrs',
     days: '4 days left',
     level: 'Hard',

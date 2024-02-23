@@ -98,15 +98,9 @@ const Project = () => {
                   <span style={{ fontWeight: 700 }}>
                     Medical App (iOS native)
                   </span>
-                  <Link to={'/dashboard/viewall'} className='href'>
+                  <Link to={'/project/details'} className='href'>
                     <Text style={{ color: '#3F8CFF' }}>View More</Text>
                   </Link>
-                  {/* <Flex gap={10}>
-                    <Link to={'/details'}>
-                      <Text type='secondary'>View All</Text>
-                    </Link>
-                    <ArrowRightOutlined />
-                  </Flex> */}
                 </Flex>
               </Menu.Item>
               <Divider />
@@ -120,7 +114,7 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Food Delivery Service</span>
-                  <Link to={'/dashboard/viewall'} className='href'>
+                  <Link to={'/project/details'} className='href'>
                     <Text style={{ color: '#3F8CFF' }}>View More</Text>
                   </Link>
                   {/* <Flex gap={10}>
@@ -142,7 +136,7 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Fortune website</span>
-                  <Link to={'/dashboard/viewall'} className='href'>
+                  <Link to={'/project/details'} className='href'>
                     <Text style={{ color: '#3F8CFF' }}>View More</Text>
                   </Link>
                   {/* <Flex gap={10}>
@@ -164,7 +158,7 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Planner App</span>
-                  <Link to={'/dashboard/viewall'} className='href'>
+                  <Link to={'/project/details'} className='href'>
                     <Text style={{ color: '#3F8CFF' }}>View More</Text>
                   </Link>
                   {/* <Flex gap={10}>
@@ -188,7 +182,7 @@ const Project = () => {
                   <span style={{ fontWeight: 700 }}>
                     Time tracker - personal <br /> account
                   </span>
-                  <Link to={'/dashboard/viewall'} className='href'>
+                  <Link to={'/project/details'} className='href'>
                     <Text style={{ color: '#3F8CFF' }}>View More</Text>
                   </Link>
                   {/* <Flex gap={10}>
@@ -210,7 +204,7 @@ const Project = () => {
                   style={{ margin: '10px 10px' }}>
                   <Text type='secondary'>PN0001245</Text>
                   <span style={{ fontWeight: 700 }}>Internal Project</span>
-                  <Link to={'/dashboard/viewall'} className='href'>
+                  <Link to={'/project/details'} className='href'>
                     <Text style={{ color: '#3F8CFF' }}>View More</Text>
                   </Link>
                   {/* <Flex gap={10}>

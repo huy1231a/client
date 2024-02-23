@@ -1,0 +1,119 @@
+.layout__task {
+  /* width: 100%; */
+  padding: 20px;
+}
+
+.task1 {
+  width: 23%;
+  border-radius: 24px;
+  padding: 35px;
+  background-color: white;
+}
+
+.task2__ {
+  width: 100%;
+  background-color: white;
+  border-radius: 24px;
+  height: 1350px;
+  padding: 25px;
+}
+.task2 .task2__ .icon__view {
+  background-color: #f4f9fd;
+}
+.task2 {
+  width: 50%;
+}
+
+.task3 {
+  width: 23%;
+  border-radius: 24px;
+  padding: 25px;
+  background-color: white;
+}
+
+.task__ {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  /* justify-content: space-between; */
+}
+
+.task2 .icon__view {
+  background-color: white;
+}
+
+.link__acc {
+  width: 25%;
+  height: 40px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.acc__ {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+}
+
+.mind__map {
+  margin-top: 30px;
+  width: 75%;
+  height: 50px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.mind__map__task {
+  margin-top: 30px;
+  width: 50%;
+  height: 50px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.view__mored {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.task__info__e {
+  width: 100%;
+  margin-top: 30px;
+  height: 370px;
+  background-color: #f4f9fd;
+  border-radius: 14px;
+  padding: 1px;
+}
+
+.time__tracking {
+  display: flex;
+  align-items: center;
+}
+
+.log__time {
+  margin-top: 20px;
+  box-shadow: 0px 6px 58px 0px rgba(196, 203, 214, 0.1);
+}

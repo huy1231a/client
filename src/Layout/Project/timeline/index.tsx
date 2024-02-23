@@ -1,11 +1,11 @@
 import React from 'react'
-import CalenderProject from '../common/Calender_Project'
+import TimeLineP from '../common/Calender_Project'
 import './style.css'
 
 const TimeLine = () => {
   return (
     <div className='time__line'>
-      <CalenderProject />
+      <TimeLineP />
     </div>
   )
 }

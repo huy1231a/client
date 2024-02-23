@@ -1,0 +1,32 @@
+.link__back {
+}
+
+.left__project__cot1 {
+  width: 23%;
+  height: 1400px;
+  border-radius: 24px;
+  background-color: white;
+  padding: 20px;
+}
+
+.icon__view {
+  width: 44px;
+  height: 44px;
+  background-color: #f4f9fd;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.titlle__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info__de {
+  display: flex;
+  align-items: center;
+}

@@ -21,7 +21,6 @@
 .left__project__cot {
   width: 25%;
   height: 1400px;
-
   background-color: white;
 }
 
@@ -53,7 +52,7 @@
 }
 .text {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .btn-1 {

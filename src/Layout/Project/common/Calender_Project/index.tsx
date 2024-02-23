@@ -1,79 +1,48 @@
-import React from 'react'
-import type { Dayjs } from 'dayjs'
-import type { BadgeProps, CalendarProps } from 'antd'
-import { Badge, Calendar } from 'antd'
+import React, { useState } from 'react'
+import type { RadioChangeEvent } from 'antd'
+import { Radio, Timeline } from 'antd'
 
-const getListData = (value: Dayjs) => {
-  let listData
-  switch (value.date()) {
-    case 8:
-      listData = [
-        { type: 'warning', content: 'This is warning event.' },
-        { type: 'success', content: 'This is usual event.' },
-      ]
-      break
-    case 10:
-      listData = [
-        { type: 'warning', content: 'This is warning event.' },
-        { type: 'success', content: 'This is usual event.' },
-        { type: 'error', content: 'This is error event.' },
-      ]
-      break
-    case 15:
-      listData = [
-        { type: 'warning', content: 'This is warning event' },
-        { type: 'success', content: 'This is very long usual event......' },
-        { type: 'error', content: 'This is error event 1.' },
-        { type: 'error', content: 'This is error event 2.' },
-        { type: 'error', content: 'This is error event 3.' },
-        { type: 'error', content: 'This is error event 4.' },
-      ]
-      break
-    default:
+const TimeLineP: React.FC = () => {
+  const [mode, setMode] = useState<'left' | 'alternate' | 'right'>('left')
+
+  const onChange = (e: RadioChangeEvent) => {
+    setMode(e.target.value)
   }
-  return listData || []
+
+  return (
+    <>
+      <Radio.Group
+        onChange={onChange}
+        value={mode}
+        style={{
+          marginBottom: 20,
+        }}>
+        <Radio value='left'>To do</Radio>
+        <Radio value='right'>Review</Radio>
+        <Radio value='alternate'>Done</Radio>
+      </Radio.Group>
+      <Timeline
+        mode={mode}
+        items={[
+          {
+            label: '2015-09-01',
+            children: 'Create a services',
+          },
+          {
+            label: '2015-09-01 09:12:11',
+            children: 'Solve initial network problems',
+          },
+          {
+            children: 'Technical testing',
+          },
+          {
+            label: '2015-09-01 09:12:11',
+            children: 'Network problems being solved',
+          },
+        ]}
+      />
+    </>
+  )
 }
 
-const getMonthData = (value: Dayjs) => {
-  if (value.month() === 8) {
-    return 1394
-  }
-}
-
-const CalenderProject: React.FC = () => {
-  const monthCellRender = (value: Dayjs) => {
-    const num = getMonthData(value)
-    return num ? (
-      <div className='notes-month'>
-        <section>{num}</section>
-        <span>Backlog number</span>
-      </div>
-    ) : null
-  }
-
-  const dateCellRender = (value: Dayjs) => {
-    const listData = getListData(value)
-    return (
-      <ul className='events'>
-        {listData.map((item) => (
-          <li key={item.content}>
-            <Badge
-              status={item.type as BadgeProps['status']}
-              text={item.content}
-            />
-          </li>
-        ))}
-      </ul>
-    )
-  }
-
-  const cellRender: CalendarProps<Dayjs>['cellRender'] = (current, info) => {
-    if (info.type === 'date') return dateCellRender(current)
-    if (info.type === 'month') return monthCellRender(current)
-    return info.originNode
-  }
-
-  return <Calendar cellRender={cellRender} />
-}
-
-export default CalenderProject
+export default TimeLineP

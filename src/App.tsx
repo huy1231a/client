@@ -7,6 +7,8 @@ import ProjectPage from './pages/ProjectPage'
 import DashBoardPage from './pages/dashboard/DashBoardPage'
 import LoginPage from './pages/LoginPage'
 import ViewAllEvent from './pages/dashboard/viewAllEvents/ViewAllEvent'
+import ProjectDetailsPage from './pages/ProjectDetailsPage'
+import TaskDetailsPage from './pages/TaskDetailsPage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
@@ -29,6 +31,16 @@ function App() {
                     <Route path='/dashboard' Component={DashBoardPage} />
                     <Route path='/dashboard/viewAll' Component={ViewAllEvent} />
                     <Route path='/project' Component={ProjectPage} />
+                    {/* <Route path={`/project/${id}`} Component={ProjectPage} /> */}
+                    <Route
+                      path={`/project/details`}
+                      Component={ProjectDetailsPage}
+                    />
+                    {/* <Route path={`/project/${id}`} Component={ProjectPage} /> */}
+                    <Route
+                      path={`/project/details/PN0001245`}
+                      Component={TaskDetailsPage}
+                    />
                   </Routes>
                 </Content>
                 <Footer>
