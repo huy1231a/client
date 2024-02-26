@@ -453,11 +453,18 @@ const TaskDetails = () => {
                   Log time
                 </Button>
                 <Modal
-                  title='Vertically centered modal dialog'
+                  title='Time Tracking'
                   centered
                   open={modal2Open}
-                  onOk={() => setModal2Open(false)}
-                  onCancel={() => setModal2Open(false)}>
+                  onCancel={() => setModal2Open(false)}
+                  footer={[
+                    <Button
+                      key='submit'
+                      type='primary'
+                      onClick={() => setModal2Open(false)}>
+                      Save Task
+                    </Button>,
+                  ]}>
                   <ModelTask />
                 </Modal>
               </div>

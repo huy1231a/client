@@ -131,7 +131,7 @@ const TaskBoard: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
                     draggable
                     onDragStart={(e) => onDragStart(e)}
                     onDragEnd={(e) => onDragEnd(e)}>
-                    <div className='title'>
+                    <div className='title2'>
                       <div>
                         <div>{task.idTask}</div>
                         <Text type='secondary'>{task.name}</Text>

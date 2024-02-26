@@ -1,0 +1,14 @@
+.task__model {
+  width: 100%;
+}
+
+.task__model .contend {
+  width: 80%;
+  margin: 20px 0px 20px 0px;
+  background-color: #f4f9fd;
+  border-radius: 15px;
+}
+
+.contend__lay {
+  margin: 20px 0px 20px 0px;
+}

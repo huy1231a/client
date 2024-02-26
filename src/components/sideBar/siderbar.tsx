@@ -51,7 +51,7 @@ const Siderbar = () => {
     {
       key: '3',
       icon: <CalendarOutlined />,
-      label: <Link to={'/'}>Calendar</Link>,
+      label: <Link to={'/calender'}>Calendar</Link>,
     },
     {
       key: '4',

@@ -1,0 +1,47 @@
+.vacations {
+  width: 100%;
+}
+
+.vacations_1 {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.vacations .vacations_1 .one {
+  width: 33%;
+  height: 193px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.vacations .vacations_1 .two {
+  width: 33%;
+  height: 193px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.vacations .vacations_1 .three {
+  width: 33%;
+  height: 193px;
+  background-color: white;
+  border-radius: 15px;
+}
+.vacations .vacations_1 .one .origin {
+  width: 72px;
+  height: 72px;
+  border-radius: 9999px;
+  border: 2px solid #6d5dd3;
+  color: #15c0e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.one__ct {
+  margin: 14px 0px 0px 40px;
+}

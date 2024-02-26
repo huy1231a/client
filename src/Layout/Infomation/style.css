@@ -1,0 +1,122 @@
+.my__profile {
+  width: 100%;
+  height: auto;
+}
+
+.setting {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.svg {
+  margin: auto;
+}
+
+.info__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.img__info {
+  border: 3px solid #3f8cff;
+  border-radius: 9999px;
+}
+
+.project__content .left__project__cot1 .titlle__details .icon__view {
+  width: 40px;
+  height: 40px;
+}
+
+.my__profile .project__content .left__project__cot1 {
+  height: auto;
+}
+
+.project__info {
+  width: 100%;
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: center;
+  /* margin-left: 50px; */
+}
+.project__info__right {
+  width: 50%;
+  height: 48px;
+  border-radius: 20px;
+  background-color: #e6edf5;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.project__info__right .one {
+  width: 33%;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.project__info__right .two {
+  width: 33%;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.project__info__right .three {
+  width: 33%;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #3f8cff;
+  color: white;
+  width: 33%;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.project__info__left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.one__1 {
+  height: 48px;
+}
+.two__2 {
+  height: 48px;
+}
+
+.right__project__cot .project__ {
+  margin-top: 20px;
+}
+
+.workload__info {
+  margin-top: 20px;
+}

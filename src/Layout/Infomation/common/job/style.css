@@ -1,0 +1,15 @@
+.job__now {
+  width: 90%;
+  height: 48px;
+  border: 1px solid #d8e0f0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.job__name {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px 0px 0px;
+}

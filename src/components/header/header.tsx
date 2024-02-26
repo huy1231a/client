@@ -32,7 +32,7 @@ const HeaderC = () => {
   const { Search } = Input
   const items: MenuProps['items'] = [
     {
-      label: 'User Info',
+      label: <Link to={'/myprofile'}>User Info</Link>,
       key: '1',
       icon: <UserOutlined />,
     },
