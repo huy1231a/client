@@ -4,7 +4,6 @@ import {
   Button,
   Col,
   Divider,
-  Flex,
   Modal,
   Row,
   Select,
@@ -21,6 +20,7 @@ import Project_Dash from '../Dashboard/Project__Dash'
 import { info, projectData } from '../Dashboard/data'
 import Workload from '../../common/Dashboard/Workload'
 import Vacations, { dataVacation } from './common/vactions'
+import Request, { requestData } from './common/request'
 
 const MyProfile = () => {
   const { Title } = Typography
@@ -36,13 +36,25 @@ const MyProfile = () => {
   }
 
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpenRq, setIsModalOpenRq] = useState(false)
 
   const showModal = () => {
     setIsModalOpen(true)
   }
+  const showModalAddRq = () => {
+    setIsModalOpenRq(true)
+  }
 
   const handleOk = () => {
     setIsModalOpen(false)
+  }
+
+  const handleOkRq = () => {
+    setIsModalOpenRq(false)
+  }
+
+  const handleCancelRq = () => {
+    setIsModalOpenRq(false)
   }
 
   const handleCancel = () => {
@@ -136,10 +148,27 @@ const MyProfile = () => {
                   type='primary'
                   shape='round'
                   icon={<PlusOutlined />}
-                  size={'large'}>
+                  size={'large'}
+                  onClick={showModalAddRq}>
                   Add Request
                 </Button>
               )}
+              <Modal
+                title='Add Request'
+                open={isModalOpenRq}
+                onCancel={handleCancelRq}
+                centered
+                width={413}
+                footer={[
+                  <Button key='back' onClick={handleCancelRq}>
+                    Close
+                  </Button>,
+                  <Button key='submit' type='primary' onClick={handleOkRq}>
+                    Send Request
+                  </Button>,
+                ]}>
+                aaa
+              </Modal>
               {activeItem === 1 && (
                 <>
                   <div className='one__1'>
@@ -230,16 +259,31 @@ const MyProfile = () => {
             </>
           )}
           {activeItem === 3 && (
-            <Flex>
-              {dataVacation.map((item) => (
-                <Vacations
-                  color={item.color}
-                  contend={item.contend}
-                  number={item.number}
+            <>
+              <div className='info__se'>
+                {dataVacation.map((item) => (
+                  <Vacations
+                    color={item.color}
+                    contend={item.contend}
+                    number={item.number}
+                    title={item.title}
+                  />
+                ))}
+              </div>
+              <Title level={3} style={{ padding: 10 }}>
+                My Requests
+              </Title>
+              {requestData.map((item) => (
+                <Request
                   title={item.title}
+                  duration={item.duration}
+                  startDate={item.startDate}
+                  endDate={item.endDate}
+                  status={item.status}
+                  svg={item.svg}
                 />
               ))}
-            </Flex>
+            </>
           )}
         </div>
       </div>

@@ -96,6 +96,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .project__info__left {
@@ -119,4 +120,10 @@
 
 .workload__info {
   margin-top: 20px;
+}
+
+.info__se {
+  width: 100%;
+  display: flex;
+  gap: 20px;
 }

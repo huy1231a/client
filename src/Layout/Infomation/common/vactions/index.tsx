@@ -33,26 +33,58 @@ export const dataVacation: Prop[] = [
 const Vacations: React.FC<Prop> = ({ number, title, contend, color }) => {
   const { Text, Title } = Typography
   return (
-    <div className='vacations'>
-      <div className='vacations_1'>
-        <div className='one'>
-          <div className='one__ct'>
-            <div
-              className='origin'
+    // <div className='vacations'>
+    //   <div className='vacations_1'>
+    //     <div className='one'>
+    //       <div className='one__ct'>
+    //         <div
+    //           className='origin'
+    //           style={{
+    //             border: `${
+    //               color === 'xanh'
+    //                 ? '2px solid #15c0e6'
+    //                 : color === 'tim'
+    //                 ? '2px solid #6D5DD3'
+    //                 : '2px solid #f65160'
+    //             }`,
+    //           }}>
+    //           {number}
+    //         </div>
+    //         <Title level={3}>{title}</Title>
+    //         <Text type='secondary'>{contend}</Text>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    <div className='vacations__lay'>
+      <div className='one'>
+        <div className='one__ct'>
+          <div
+            className='origin'
+            style={{
+              border: `${
+                color === 'xanh'
+                  ? '2px solid #15c0e6'
+                  : color === 'tim'
+                  ? '2px solid #6D5DD3'
+                  : '2px solid #f65160'
+              }`,
+            }}>
+            <span
               style={{
-                border: `${
+                color: `${
                   color === 'xanh'
-                    ? '2px solid #15c0e6'
+                    ? '#15c0e6'
                     : color === 'tim'
-                    ? '2px solid #6D5DD3'
-                    : '2px solid #f65160'
+                    ? '#6D5DD3'
+                    : ' #f65160'
                 }`,
               }}>
               {number}
-            </div>
-            <Title level={3}>{title}</Title>
-            <Text type='secondary'>{contend}</Text>
+            </span>
           </div>
+          <Title level={3}>{title}</Title>
+          <Text type='secondary'>{contend}</Text>
         </div>
       </div>
     </div>
