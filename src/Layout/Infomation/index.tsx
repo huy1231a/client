@@ -21,6 +21,7 @@ import { info, projectData } from '../Dashboard/data'
 import Workload from '../../common/Dashboard/Workload'
 import Vacations, { dataVacation } from './common/vactions'
 import Request, { requestData } from './common/request'
+import ModelInfomation from './common/model/modelInfomation'
 
 const MyProfile = () => {
   const { Title } = Typography
@@ -29,10 +30,10 @@ const MyProfile = () => {
     setActiveItem(1)
   }, [])
 
-  const [activeItem, setActiveItem] = useState<number | null>(null)
+  const [activeItem, setActiveItem] = useState<number | null>(1)
 
   const handleClick = (itemName: number) => {
-    setActiveItem(itemName === activeItem ? null : itemName)
+    setActiveItem(itemName === activeItem ? 1 : itemName)
   }
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -158,7 +159,7 @@ const MyProfile = () => {
                 open={isModalOpenRq}
                 onCancel={handleCancelRq}
                 centered
-                width={413}
+                width={520}
                 footer={[
                   <Button key='back' onClick={handleCancelRq}>
                     Close
@@ -167,7 +168,7 @@ const MyProfile = () => {
                     Send Request
                   </Button>,
                 ]}>
-                aaa
+                <ModelInfomation />
               </Modal>
               {activeItem === 1 && (
                 <>
