@@ -1,0 +1,8 @@
+.App__Calender {
+  text-align: center;
+  padding: 20px;
+}
+
+.selected-day {
+  background-color: aqua;
+}

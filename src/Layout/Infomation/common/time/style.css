@@ -1,0 +1,27 @@
+.time__info {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.total_time {
+  width: 90%;
+  /* height: 70px; */
+  height: 70px;
+  background-color: #f4f9fd;
+  border-radius: 15px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.total__time__coted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto 0px; */
+}

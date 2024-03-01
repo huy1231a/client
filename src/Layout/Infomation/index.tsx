@@ -8,6 +8,7 @@ import {
   Row,
   Select,
   Typography,
+  message,
 } from 'antd'
 import { EditOutlined, FilterOutlined, PlusOutlined } from '@ant-design/icons'
 import './style.css'
@@ -51,6 +52,7 @@ const MyProfile = () => {
   }
 
   const handleOkRq = () => {
+    message.success('Send request sucess')
     setIsModalOpenRq(false)
   }
 
@@ -157,9 +159,14 @@ const MyProfile = () => {
               <Modal
                 title='Add Request'
                 open={isModalOpenRq}
+                bodyStyle={{
+                  overflowY: 'auto',
+                  maxHeight: 'calc(100vh - 200px)',
+                  margin: 'auto',
+                }}
                 onCancel={handleCancelRq}
                 centered
-                width={520}
+                width={608}
                 footer={[
                   <Button key='back' onClick={handleCancelRq}>
                     Close

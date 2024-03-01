@@ -127,3 +127,14 @@
   display: flex;
   gap: 20px;
 }
+
+.model__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.btn_2 {
+  margin: auto;
+}

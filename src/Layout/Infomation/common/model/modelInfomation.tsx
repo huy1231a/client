@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Radio, RadioChangeEvent, Typography } from 'antd'
 import './style.css'
-import ThreeDayCalendar from '../calender'
+import CalendarComponent from '../calender'
+import Time from '../time/time'
+import TextArea from 'antd/es/input/TextArea'
 
 const ModelInfomation = () => {
   const [value, setValue] = useState(1)
@@ -48,7 +50,19 @@ const ModelInfomation = () => {
         </div>
       </div>
 
-      <ThreeDayCalendar />
+      <div className='cl__inffo'>
+        <CalendarComponent />
+      </div>
+      <div className='text-area'>
+        {activeItem === 1 && (
+          <TextArea
+            rows={4}
+            placeholder='Add your comment'
+            style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+          />
+        )}
+      </div>
+      <div className='time__line__2'>{activeItem === 2 && <Time />}</div>
     </div>
   )
 }
