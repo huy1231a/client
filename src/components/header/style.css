@@ -8,3 +8,23 @@
   box-shadow: 0px 6px 58px 0px rgba(196, 203, 214, 0.1);
   border-radius: 14px;
 }
+
+.noti1 {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  margin: 0px 20px 20px 20px;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.time__d {
+  margin-left: 90px;
+}
+
+.name2 {
+  color: #3f8cff;
+  font-weight: 700;
+}

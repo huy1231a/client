@@ -11,6 +11,7 @@ import ProjectDetailsPage from './pages/ProjectDetailsPage'
 import TaskDetailsPage from './pages/TaskDetailsPage'
 import CalenderPage from './pages/Calender/CalenderPage'
 import MyProfilePage from './pages/Info/MyProfilePage'
+import SettingPage from './pages/SettingPage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
@@ -45,6 +46,10 @@ function App() {
                     />
                     <Route path={`/calender`} Component={CalenderPage} />
                     <Route path={`/myprofile`} Component={MyProfilePage} />
+                    <Route
+                      path={`/myprofile/setting`}
+                      Component={SettingPage}
+                    />
                   </Routes>
                 </Content>
                 <Footer>

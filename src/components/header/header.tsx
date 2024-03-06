@@ -5,13 +5,14 @@ import {
   Dropdown,
   Flex,
   Input,
+  Modal,
   Space,
   message,
 } from 'antd'
 import { SearchProps } from 'antd/es/input/Search'
 import type { MenuProps } from 'antd'
 import {
-  NotificationOutlined,
+  BellOutlined,
   CaretDownFilled,
   UserOutlined,
   UserSwitchOutlined,
@@ -20,6 +21,8 @@ import {
 } from '@ant-design/icons'
 import './style.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import ModelNotification from './model'
 
 const HeaderC = () => {
   const onSearch: SearchProps['onSearch'] = (value, _e, info) =>
@@ -57,6 +60,8 @@ const HeaderC = () => {
     onClick: handleMenuClick,
   }
 
+  const [modal2Open, setModal2Open] = useState(false)
+
   return (
     <>
       <Flex align='center' justify='space-between'>
@@ -74,10 +79,27 @@ const HeaderC = () => {
             <Avatar
               shape='square'
               size='large'
-              icon={<NotificationOutlined style={{ color: 'black' }} />}
+              icon={<BellOutlined style={{ color: 'black' }} />}
+              onClick={() => {
+                setModal2Open(true)
+              }}
               style={{ cursor: 'pointer', background: '#F4F9FD' }}
             />
           </Badge>
+          <Modal
+            title='Notifications'
+            style={{ top: 20, left: 650 }}
+            width={'28%'}
+            open={modal2Open}
+            onOk={() => setModal2Open(false)}
+            onCancel={() => setModal2Open(false)}
+            bodyStyle={{
+              overflowY: 'auto',
+              maxHeight: 'calc(100vh - 200px)',
+              margin: 'auto',
+            }}>
+            <ModelNotification />
+          </Modal>
           <Dropdown menu={menuProps}>
             <Button size='middle' className='btn'>
               <Space>
