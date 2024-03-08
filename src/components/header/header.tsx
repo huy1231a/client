@@ -67,7 +67,7 @@ const HeaderC = () => {
       <Flex align='center' justify='space-between'>
         <div className='form__search'>
           <Search
-            placeholder='input search text'
+            placeholder='Search ...'
             onSearch={onSearch}
             style={{ width: 412, height: 48 }}
             className='search'

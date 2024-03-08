@@ -1,0 +1,88 @@
+.vations {
+  height: 1000px;
+}
+.vacations__2 {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vacations__2 .title__vations {
+  width: 33%;
+}
+
+.vacations__2 .conttend__vat {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6edf5;
+  border-radius: 20px;
+  border: 1px solid silver;
+}
+
+.vacations__2 .conttend__vat .active {
+  background-color: #3f8cff;
+  color: white;
+  width: 50%;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+.vacations__2 .conttend__vat .one {
+  width: 50%;
+  border-radius: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.vacations__2 .btn__add {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.employees {
+  width: 98%;
+  margin: auto auto 20px auto;
+  height: 91px;
+  border-radius: 21px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.employees__da {
+  margin: 10px 40px 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name__em {
+  display: flex;
+  align-items: center;
+}
+
+.name__ {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.vacations__over {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.right_contend {
+  display: flex;
+  gap: 100px;
+}

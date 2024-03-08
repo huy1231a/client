@@ -12,6 +12,7 @@ import TaskDetailsPage from './pages/TaskDetailsPage'
 import CalenderPage from './pages/Calender/CalenderPage'
 import MyProfilePage from './pages/Info/MyProfilePage'
 import SettingPage from './pages/SettingPage'
+import VacationsPage from './pages/Vacations/VacationsPage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
@@ -50,6 +51,7 @@ function App() {
                       path={`/myprofile/setting`}
                       Component={SettingPage}
                     />
+                    <Route path={`/vacations`} Component={VacationsPage} />
                   </Routes>
                 </Content>
                 <Footer>

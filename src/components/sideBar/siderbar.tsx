@@ -56,7 +56,7 @@ const Siderbar = () => {
     {
       key: '4',
       icon: <FlagOutlined />,
-      label: <Link to={'/'}>Vacations</Link>,
+      label: <Link to={'/vacations'}>Vacations</Link>,
     },
     {
       key: '5',

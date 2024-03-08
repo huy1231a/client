@@ -28,8 +28,11 @@ const FormUpdates = () => {
       wrapperCol={{ span: 14 }}
       layout='horizontal'
       style={{ width: '100%' }}>
-      <Form.Item label='First Name'>
-        <Input style={{ width: '100%' }} />
+      <Form.Item
+        label='First Name'
+        name='Input'
+        rules={[{ required: true, message: 'Please input!' }]}>
+        <Input />
       </Form.Item>
       <Form.Item label='Last Name'>
         <Input style={{ width: '100%' }} />
@@ -110,12 +113,15 @@ const FormUpdates = () => {
       </Form.Item>
 
       <Flex justify='center'>
-        <Button
-          size='large'
-          style={{ width: '100%', marginLeft: 80 }}
-          type='primary'>
-          Updates
-        </Button>
+        <Form.Item>
+          <Button
+            size='large'
+            style={{ width: '100%', marginLeft: 80 }}
+            type='primary'
+            htmlType='submit'>
+            Updates
+          </Button>
+        </Form.Item>
       </Flex>
     </Form>
   )
