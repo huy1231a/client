@@ -61,7 +61,7 @@ const Siderbar = () => {
     {
       key: '5',
       icon: <UserOutlined />,
-      label: <Link to={'/'}>Employees</Link>,
+      label: <Link to={'/employees'}>Employees</Link>,
     },
     {
       key: '6',

@@ -13,6 +13,7 @@ import CalenderPage from './pages/Calender/CalenderPage'
 import MyProfilePage from './pages/Info/MyProfilePage'
 import SettingPage from './pages/SettingPage'
 import VacationsPage from './pages/Vacations/VacationsPage'
+import EmployePage from './pages/EmployePage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
@@ -52,6 +53,7 @@ function App() {
                       Component={SettingPage}
                     />
                     <Route path={`/vacations`} Component={VacationsPage} />
+                    <Route path={`/employees`} Component={EmployePage} />
                   </Routes>
                 </Content>
                 <Footer>

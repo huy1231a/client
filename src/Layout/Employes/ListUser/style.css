@@ -1,0 +1,57 @@
+.list__user{
+    margin-top: 20px;
+    width: 95%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+}
+
+.list__name{
+    width: 35%;
+    display: flex;
+    gap: 20px;
+}
+.list__sex{
+    flex-direction: column;
+    width: 20%;
+    display: flex;
+    gap: 20px;
+}
+
+.list__dob{
+    flex-direction: column;
+    width: 20%;
+    display: flex;
+    gap: 20px;
+}
+.list__age{
+    flex-direction: column;
+    width: 20%;
+    display: flex;
+    gap: 20px;
+}
+.list__pos{
+    flex-direction: column;
+    width: 20%;
+    display: flex;
+    gap: 20px;
+}
+.list__active{
+    justify-content: center;
+    align-items: center;
+    width: 4%;
+    display: flex;
+    gap: 20px;
+}
+
+.svg__user{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #F4F9FD;
+    margin: auto;
+    cursor: pointer;
+}
