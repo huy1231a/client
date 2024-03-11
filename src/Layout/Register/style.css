@@ -1,0 +1,120 @@
+.register__ct {
+  width: 100%;
+  background-color: #f2f2f2;
+  height: auto;
+}
+
+.register__ct__right {
+  width: 20%;
+  background-color: #3f8cff;
+  border-radius: 24px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.conttend__res {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.register__ct__left {
+  width: 80%;
+  background-color: white;
+  border-radius: 24px;
+}
+
+.Step {
+  color: white;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-steps
+  .ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: white;
+  font-weight: 500;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-steps
+  .ant-steps-item-wait
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: white;
+  font-weight: 500;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-steps
+  .ant-steps-item-wait
+  .ant-steps-item-icon
+  > .ant-steps-icon {
+  color: white;
+  font-weight: 500;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-steps
+  .ant-steps-item-process
+  .ant-steps-item-icon
+  > .ant-steps-icon {
+  color: white;
+  font-weight: 500;
+}
+
+.title__regs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: -200px;
+}
+
+.title__Step {
+  color: #3f8cff;
+  text-align: center;
+}
+
+.title__phone {
+  text-align: center;
+}
+
+.code__sms {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.info__lock {
+  width: 60%;
+  border-radius: 24px;
+  height: 88px;
+  background-color: #f4f9fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  color: #3f8cff;
+  margin: 20px 0px 20px 0px;
+}
+
+.step__1 {
+  width: 50%;
+  margin: auto;
+}
+
+.btn__next {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 70px;
+}
+
+.divider {
+  margin: 50px 0px 20px 0px;
+}

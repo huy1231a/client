@@ -14,12 +14,13 @@ import MyProfilePage from './pages/Info/MyProfilePage'
 import SettingPage from './pages/SettingPage'
 import VacationsPage from './pages/Vacations/VacationsPage'
 import EmployePage from './pages/EmployePage'
+import RigesterPage from './pages/RigesterPage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
 
 function App() {
-  const auth = true
+  const auth = false
   return (
     <>
       {auth ? (
@@ -69,7 +70,8 @@ function App() {
       ) : (
         <BrowserRouter>
           <Routes>
-            <Route path='/' Component={LoginPage} />
+            <Route path='/login' Component={LoginPage} />
+            <Route path='/register' Component={RigesterPage} />
           </Routes>
         </BrowserRouter>
       )}

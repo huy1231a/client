@@ -1,54 +1,89 @@
-.employye__lay{
-    width: 100%;
-    height: 1300px;
+.employye__lay {
+  width: 100%;
+  height: 1300px;
 }
-.employees__header{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 20px 0px 50px;
-}
-
-.employees__middle{
-    display: flex;
-    width: 30%;
-    height: 48px;
-    border-radius: 24px;
-    border: 2px solid silver;
+.employees__header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px 0px 50px;
 }
 
-.employees__middle__list{
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    padding: 12.5px;
-    background-color: #3F8CFF;
-    border-radius: 24px;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
+.employees__middle {
+  display: flex;
+  width: 30%;
+  height: 48px;
+  border-radius: 24px;
+  border: 2px solid silver;
 }
 
-.employees__middle__activity{
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    padding: 12.5px;
-    /* background-color: #3F8CFF; */
-    border-radius: 24px;
-    /* color: white; */
-    /* font-weight: 700; */
-    cursor: pointer;
-}
- 
-.employees__end{
-    display: flex;
-    gap: 20px;
+.employees__middle__list {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 12.5px;
+  background-color: #3f8cff;
+  border-radius: 24px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.page__{
-    margin: 20px 30px 20px 0px;
-    display: flex;
-    justify-content: end;
+.employees__middle__activity {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 12.5px;
+  /* background-color: #3F8CFF; */
+  border-radius: 24px;
+  /* color: white; */
+  /* font-weight: 700; */
+  cursor: pointer;
+}
+
+.employees__end {
+  display: flex;
+  gap: 20px;
+}
+
+.page__ {
+  margin: 20px 30px 20px 0px;
+  display: flex;
+  justify-content: end;
+}
+
+.employ__model {
+  width: 90%;
+  background-color: #87b7ff;
+  margin: 20px auto 20px auto;
+  border-radius: 24px;
+  height: 168px;
+}
+
+.svg__em {
+  width: 50%;
+  margin: 33px auto 20px auto;
+  position: absolute;
+  top: 5px;
+  left: 130px;
+}
+
+.contend__emModel {
+  width: 100%;
+}
+
+.text___ {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3f8cff;
+}
+
+.addlist {
+  cursor: pointer;
+}
+
+.addlist:hover {
+  text-decoration: solid;
+  color: #3f8cff;
 }

@@ -56,7 +56,7 @@ const fetch = (value: string, callback: Function) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
   const dataV1 = dataSelect.map((item: Data) => ({
-    id: 'item.id',
+    id: item.id,
     value: item.value,
     text: item.text,
   }))

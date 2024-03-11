@@ -1,0 +1,41 @@
+.login__page {
+  width: 100%;
+  background-color: antiquewhite;
+  display: flex;
+}
+
+.left__ct__login {
+  width: 50%;
+  background-color: #3f8cff;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title__login {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.right__ct__login {
+  width: 50%;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.form__login {
+  width: 50%;
+  margin: auto;
+}
+
+.title__form {
+  text-align: center;
+  margin-bottom: 20px;
+}
