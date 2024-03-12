@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
 import { svg, svg2 } from './Constant'
-import { Button, Checkbox, Flex, Form, Input } from 'antd'
+import { Button, Checkbox, Flex, Form, Input, message } from 'antd'
 import { Link } from 'react-router-dom'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 const Login = () => {
+  const [username, setUsername] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        return message.success('Login Succes')
+      } else {
+        return message.error('Login Fail')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  }
+
   return (
     <div className='login__page'>
       <div className='left__ct__login'>
@@ -34,6 +59,7 @@ const Login = () => {
                 prefix={<UserOutlined className='site-form-item-icon' />}
                 placeholder='email'
                 size='large'
+                onChange={(e) => setUsername(e.target.value)}
               />
             </Form.Item>
             <Form.Item
@@ -46,6 +72,7 @@ const Login = () => {
                 type='password'
                 size='large'
                 placeholder='Password'
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Item>
             <Form.Item>
@@ -67,6 +94,7 @@ const Login = () => {
                   htmlType='submit'
                   className='login-form-button'
                   size='large'
+                  onClick={handleLogin}
                   style={{ width: '50%', margin: 'auto' }}>
                   Log in
                 </Button>

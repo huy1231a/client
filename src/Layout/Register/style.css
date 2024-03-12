@@ -113,8 +113,43 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 70px;
+  gap: 20px;
 }
 
 .divider {
   margin: 50px 0px 20px 0px;
+}
+
+.step__2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.raido__regis {
+  width: 25%;
+  height: 48px;
+}
+
+.raGr {
+  display: flex;
+  gap: 20px;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-radio-button-wrapper:not(
+    :first-child
+  )::before {
+  width: 0px;
+  /* border-radius: 20px; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title {
+  color: white;
+  font-weight: 500;
 }
