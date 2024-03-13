@@ -66,7 +66,7 @@ const Project = () => {
           shape='round'
           icon={<PlusOutlined />}
           size={'large'}>
-          Add Project
+          <Link to={'/project/addproject'}>Add Project</Link>
         </Button>
       </div>
       <div className='project__content'>

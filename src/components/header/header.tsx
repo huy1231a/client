@@ -21,15 +21,18 @@ import {
 } from '@ant-design/icons'
 import './style.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import ModelNotification from './model'
 
-const HeaderC = () => {
+interface Prop {
+  handleLogout: VoidFunction
+}
+
+const HeaderC: React.FC<Prop> = ({ handleLogout }) => {
   const onSearch: SearchProps['onSearch'] = (value, _e, info) =>
     console.log(info?.source, value)
 
   const handleMenuClick: MenuProps['onClick'] = (e) => {
-    message.info('Click on menu item.')
     console.log('click', e)
   }
   const { Search } = Input
@@ -52,7 +55,11 @@ const HeaderC = () => {
     {
       key: '4',
       icon: <UserSwitchOutlined />,
-      label: <Link to={'/'}>Logout</Link>,
+      label: (
+        <Link to={'/login'} onClick={handleLogout}>
+          Logout
+        </Link>
+      ),
     },
   ]
   const menuProps = {

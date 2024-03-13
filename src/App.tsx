@@ -1,11 +1,10 @@
 import './App.css'
 import { Layout, Flex, Typography } from 'antd'
 import Siderbar from './components/sideBar/siderbar'
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom'
 import HeaderC from './components/header/header'
 import ProjectPage from './pages/ProjectPage'
 import DashBoardPage from './pages/dashboard/DashBoardPage'
-import LoginPage from './pages/LoginPage'
 import ViewAllEvent from './pages/dashboard/viewAllEvents/ViewAllEvent'
 import ProjectDetailsPage from './pages/ProjectDetailsPage'
 import TaskDetailsPage from './pages/TaskDetailsPage'
@@ -15,12 +14,26 @@ import SettingPage from './pages/SettingPage'
 import VacationsPage from './pages/Vacations/VacationsPage'
 import EmployePage from './pages/EmployePage'
 import RigesterPage from './pages/RigesterPage'
+import { useState } from 'react'
+import Login from './Layout/Login'
+import AddProjectPage from './pages/AddProjectPage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
 
-function App() {
-  const auth = false
+function App(): JSX.Element {
+  const [token, setToken] = useState<string | null>(
+    localStorage.getItem('token')
+  )
+
+  const handleLogout = () => {
+    // Clear token from localStorage
+    localStorage.removeItem('token')
+    // Clear token from state
+    setToken(null)
+  }
+
+  const auth = !!token
   return (
     <>
       {auth ? (
@@ -30,13 +43,17 @@ function App() {
               <Siderbar />
               <Layout className='layout__full'>
                 <Header className='header__main'>
-                  <HeaderC />
+                  <HeaderC handleLogout={handleLogout} />
                 </Header>
                 <Content style={{ background: '#F4F9FD' }} className='content'>
                   <Routes>
                     <Route path='/dashboard' Component={DashBoardPage} />
                     <Route path='/dashboard/viewAll' Component={ViewAllEvent} />
                     <Route path='/project' Component={ProjectPage} />
+                    <Route
+                      path='/project/addproject'
+                      Component={AddProjectPage}
+                    />
                     {/* <Route path={`/project/${id}`} Component={ProjectPage} /> */}
                     <Route
                       path={`/project/details`}
@@ -70,7 +87,13 @@ function App() {
       ) : (
         <BrowserRouter>
           <Routes>
-            <Route path='/login' Component={LoginPage} />
+            <Route path='/login' element={<Login setToken={setToken} />} />
+            <Route
+              path='/dashboard'
+              element={
+                auth ? <DashBoardPage /> : <Navigate to='/login' replace />
+              }
+            />
             <Route path='/register' Component={RigesterPage} />
           </Routes>
         </BrowserRouter>

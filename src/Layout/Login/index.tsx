@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css'
 import { svg, svg2 } from './Constant'
-import { Button, Checkbox, Flex, Form, Input, message } from 'antd'
-import { Link } from 'react-router-dom'
+import { Button, Checkbox, Flex, Form, Input, Typography } from 'antd'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import LazyLoadedComponent from '../../common/lazyLoad'
 
-const Login = () => {
-  const [username, setUsername] = useState<string>('')
+interface Prop {
+  setToken: (token: string) => void
+}
+const Login: React.FC<Prop> = ({ setToken }) => {
+  const { Text } = Typography
+  const [errors, setErrors] = useState<boolean>(false)
+  const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const navigate = useNavigate()
 
+  const [isLoading, setIsLoading] = useState(false)
   const handleLogin = async () => {
     try {
       const response = await fetch('http://localhost:5000/login', {
@@ -16,20 +24,34 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       })
 
-      const data = await response.json()
-
-      if (response.ok) {
-        return message.success('Login Succes')
+      if (!response.ok) {
+        setErrors(true)
+        throw new Error('Login failed')
       } else {
-        return message.error('Login Fail')
+        setIsLoading(true)
+        setErrors(false)
+        const { token } = await response.json()
+        navigate('/dashboard')
+        localStorage.setItem('token', token)
+        setToken(token)
       }
     } catch (error) {
       console.error('Error:', error)
     }
   }
+
+  useEffect(() => {
+    if (isLoading) {
+      const timeoutId = setTimeout(() => {
+        setIsLoading(false)
+      }, 80000)
+
+      return () => clearTimeout(timeoutId) // Cleanup function
+    }
+  }, [isLoading])
 
   return (
     <div className='login__page'>
@@ -45,6 +67,7 @@ const Login = () => {
           <div>{svg2}</div>
         </div>
       </div>
+      {isLoading && <LazyLoadedComponent />}
       <div className='right__ct__login'>
         <div className='form__login'>
           <Form
@@ -59,8 +82,11 @@ const Login = () => {
                 prefix={<UserOutlined className='site-form-item-icon' />}
                 placeholder='email'
                 size='large'
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
+              {errors && (
+                <Text type={'danger'}>Username or Password incorrect</Text>
+              )}
             </Form.Item>
             <Form.Item
               name='password'
@@ -86,7 +112,6 @@ const Login = () => {
                 </Link>
               </Flex>
             </Form.Item>
-
             <Form.Item>
               <Flex align='center' justify='center'>
                 <Button
