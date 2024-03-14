@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   CalendarOutlined,
   FlagOutlined,
@@ -11,7 +11,7 @@ import {
   MenuUnfoldOutlined,
 } from '@ant-design/icons'
 import { Button, Layout, Menu, Modal, Typography, theme } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import type { MenuProps } from 'antd'
 import './style.css'
 import Support from '../../Layout/Dashboard/Model/support'
@@ -19,8 +19,14 @@ import Support from '../../Layout/Dashboard/Model/support'
 const Siderbar = () => {
   const { Text } = Typography
   const [collapsed, setCollapsed] = useState(false)
+
+  const [key, setSelectKey] = useState('') // Store the active key
+
+  // Use the `useLocation` hook to access the current URL
+  const location = useLocation()
+
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { colorBgContainer },
   } = theme.useToken()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -39,32 +45,32 @@ const Siderbar = () => {
 
   const items: MenuProps['items'] = [
     {
-      key: '1',
+      key: 'dashboard',
       icon: <HomeOutlined />,
       label: <Link to={'/dashboard'}>Dashboard</Link>,
     },
     {
-      key: '2',
+      key: 'project',
       icon: <ProjectOutlined />,
       label: <Link to={'/project'}>Projects</Link>,
     },
     {
-      key: '3',
+      key: 'calender',
       icon: <CalendarOutlined />,
       label: <Link to={'/calender'}>Calendar</Link>,
     },
     {
-      key: '4',
+      key: 'vacations',
       icon: <FlagOutlined />,
       label: <Link to={'/vacations'}>Vacations</Link>,
     },
     {
-      key: '5',
+      key: 'employees',
       icon: <UserOutlined />,
       label: <Link to={'/employees'}>Employees</Link>,
     },
     {
-      key: '6',
+      key: 'Messenger',
       icon: <MessageOutlined />,
       label: <Link to={'/'}>Messenger</Link>,
     },
@@ -83,6 +89,25 @@ const Siderbar = () => {
       ),
     },
   ]
+
+  useEffect(() => {
+    const currentPath = location.pathname.slice(1)
+    console.log('currentPath', currentPath)
+
+    if (
+      currentPath === 'project/addproject' ||
+      currentPath === 'project/details'
+    ) {
+      setSelectKey('project')
+      return
+    }
+
+    if (currentPath === 'dashboard/viewall') {
+      setSelectKey('dashboard')
+      return
+    }
+    setSelectKey(currentPath)
+  }, [location])
 
   const { Sider } = Layout
   return (
@@ -113,9 +138,10 @@ const Siderbar = () => {
       <Menu
         theme='dark'
         mode='inline'
-        // defaultSelectedKeys={['1']}
         items={items}
         className='menu'
+        selectedKeys={[key]}
+        defaultSelectedKeys={['dashboard']}
       />
       <Modal
         title='Need some Help?'

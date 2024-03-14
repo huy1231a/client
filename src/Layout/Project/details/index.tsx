@@ -40,10 +40,10 @@ const ProjectDetails = () => {
   }, [])
   const { Text, Title } = Typography
 
-  const [activeItem, setActiveItem] = useState<number | null>(null)
+  const [activeItem, setActiveItem] = useState<number | null>(1)
 
   const handleClick = (itemName: number) => {
-    setActiveItem(itemName === activeItem ? null : itemName)
+    setActiveItem(itemName === activeItem ? 1 : itemName)
   }
 
   return (

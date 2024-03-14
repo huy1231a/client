@@ -1,0 +1,34 @@
+.add__project {
+  width: 100%;
+  height: 800px;
+}
+
+.add__conttend {
+  width: 90%;
+  background-color: white;
+  margin: auto;
+  height: 776px;
+  border-radius: 20px;
+}
+
+.title__2 {
+  text-align: center;
+  padding: 25px;
+}
+
+.right___add {
+  width: 35%;
+}
+
+.left___add {
+  width: 35%;
+  border-radius: 24px;
+  border: 1px solid silver;
+  padding: 10px;
+}
+
+.contten__D {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

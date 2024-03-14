@@ -49,3 +49,80 @@
   flex-direction: column;
   gap: 40px;
 }
+
+.re__ev {
+  margin: 40px 0px 40px 0px;
+  width: 100%;
+  background-color: #f4f9fd;
+  height: 79px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.re__ev h4 {
+  margin-left: 30px;
+}
+.re__ev .switch {
+  margin-right: 30px;
+}
+
+.this__task {
+  width: 100%;
+  display: flex;
+  margin: 10px 0px 30px 0px;
+  gap: 27px;
+}
+
+.this__task__1 {
+  width: 30%;
+  padding: 15px;
+  background-color: #3f8cff;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #d8e0f0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.this__task__2 {
+  width: 30%;
+  padding: 15px;
+  background-color: #3f8cff;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #d8e0f0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.activeTask {
+  width: 30%;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #d8e0f0;
+  cursor: pointer;
+}
+
+.this__task__3 {
+  width: 30%;
+  background-color: #3f8cff;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid #d8e0f0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+:where(.css-dev-only-do-not-override-1b0bdye).ant-checkbox-group {
+  display: flex;
+  justify-content: center;
+  gap: 39px;
+}

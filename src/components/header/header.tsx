@@ -7,7 +7,6 @@ import {
   Input,
   Modal,
   Space,
-  message,
 } from 'antd'
 import { SearchProps } from 'antd/es/input/Search'
 import type { MenuProps } from 'antd'
