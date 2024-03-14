@@ -70,14 +70,14 @@ const Siderbar = () => {
       label: <Link to={'/employees'}>Employees</Link>,
     },
     {
-      key: 'Messenger',
+      key: 'messenger',
       icon: <MessageOutlined />,
-      label: <Link to={'/'}>Messenger</Link>,
+      label: <Link to={'/messenger'}>Messenger</Link>,
     },
     {
-      key: '7',
+      key: 'infoportal',
       icon: <UserSwitchOutlined />,
-      label: <Link to={'/'}>Info Portal</Link>,
+      label: <Link to={'/infoportal'}>Info Portal</Link>,
     },
     {
       key: '8',

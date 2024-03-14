@@ -17,6 +17,8 @@ import RigesterPage from './pages/RigesterPage'
 import { useState } from 'react'
 import Login from './Layout/Login'
 import AddProjectPage from './pages/AddProjectPage'
+import MessengerPage from './pages/MessengerPage'
+import InfoPortulPage from './pages/InfoPortulPage'
 
 const { Header, Footer, Content } = Layout
 const { Text } = Typography
@@ -72,6 +74,8 @@ function App(): JSX.Element {
                     />
                     <Route path={`/vacations`} Component={VacationsPage} />
                     <Route path={`/employees`} Component={EmployePage} />
+                    <Route path={`/messenger`} Component={MessengerPage} />
+                    <Route path={`/infoportal`} Component={InfoPortulPage} />
                   </Routes>
                 </Content>
                 <Footer>
