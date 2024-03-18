@@ -1,4 +1,4 @@
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import { useState } from 'react'
 import ListTask from '../common/ListTask'
 import { dataTaskList } from '../data'
@@ -6,18 +6,38 @@ import BackLock from '../common/BackLock'
 import AddTaskNew from '../addTask'
 
 const ListItem = () => {
+  const [messageApi, contextHolder] = message.useMessage()
+  const key = 'updatable'
+  const openMessage = () => {
+    messageApi.open({
+      key,
+      type: 'loading',
+      content: 'Loading...',
+    })
+
+    setClickActive(true)
+
+    setTimeout(() => {
+      messageApi.open({
+        key,
+        type: 'success',
+        content: 'Loaded!',
+        duration: 2,
+      })
+    }, 1000)
+  }
+
   const [clickActive, setClickActive] = useState(false)
   return (
     <div>
       <Button
         type='primary'
         size={'large'}
-        onClick={() => {
-          setClickActive(true)
-        }}
+        onClick={openMessage}
         style={{ width: '100%', margin: '20px 0px 20px 0px' }}>
         Active Tasks
       </Button>
+      {contextHolder}
       {clickActive &&
         (dataTaskList.length > 0 ? (
           <>

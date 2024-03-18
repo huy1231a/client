@@ -1,42 +1,48 @@
 .box__chat {
-    width: 100%;
-    min-width: 100%;
-    display: flex;
-    height: 70px;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-:where(.css-dev-only-do-not-override-1b0bdye).ant-menu-light.ant-menu-inline .ant-menu-item,
-:where(.css-dev-only-do-not-override-1b0bdye).ant-menu-light>.ant-menu.ant-menu-inline .ant-menu-item {
-    height: 70px;
+:where(.css-dev-only-do-not-override-1b0bdye).ant-menu-light.ant-menu-inline
+  .ant-menu-item,
+:where(.css-dev-only-do-not-override-1b0bdye).ant-menu-light
+  > .ant-menu.ant-menu-inline
+  .ant-menu-item {
+  height: 100px;
 }
 
 .box__chat__name {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .box__chat__name__ {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .box__chat__name__2 {
-    display: flex;
-    flex-direction: column;
-    margin-left: 25px;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  gap: 8px;
 }
 
 .overflow-ellipsis {
-    white-space: nowrap;
-    width: 30%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.box__chat__name__ .title {
-    margin-right: 50px;
+.box__chat__name__ .name__box {
+  color: #0a1629;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

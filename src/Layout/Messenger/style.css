@@ -1,113 +1,148 @@
 .mesenger {
-    width: 100%;
-    height: 1000px;
+  width: 100%;
+  height: 1200px;
 }
 
 .header__mes {
-    padding: 10px;
-    margin: 10px 20px 10px 20px;
+  padding: 10px;
+  margin: 10px 20px 10px 20px;
 }
 
 .chat__mes {
-    width: 90%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 100px;
-    margin: auto;
-    background-color: white;
-    display: flex;
+  width: 90%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 100px;
+  margin: auto;
+  background-color: white;
+  display: flex;
 }
 
 .botton__chat {
-    width: 90%;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    height: 720px;
-    margin: auto;
-    background-color: white;
-
+  width: 90%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 980px;
+  margin: auto;
+  background-color: white;
+  display: flex;
 }
 
 .header__chat__ct {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    /* background-color: blanchedalmond; */
-
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  /* background-color: blanchedalmond; */
 }
 
 .left__chat__ct {
-    width: 25%;
-    border-top-left-radius: 24px;
-    height: 100px;
-    display: flex;
-    /* background-color: blanchedalmond; */
+  width: 25%;
+  border-top-left-radius: 24px;
+  height: 100px;
+  display: flex;
+  /* background-color: blanchedalmond; */
 }
 
 .top__contend {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0px 0px 0px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0px 0px 0px 15px;
 }
 
 .btn__search {
-    display: flex;
-    gap: 10px;
-    margin: 0px 20px 0px 0px;
+  display: flex;
+  gap: 10px;
+  margin: 0px 20px 0px 0px;
 }
 
 .right__chat__ct {
-    width: 70%;
-    border-top-right-radius: 24px;
-    height: 100px;
-    /* background-color: aquamarine; */
+  width: 70%;
+  border-top-right-radius: 24px;
+  height: 100px;
+  /* background-color: aquamarine; */
 }
 
 .diveder__chat {
-    width: 1px;
-    height: 820px;
-    background-color: #E6EBF5;
+  width: 1px;
+  height: 100px;
+  background-color: #e6ebf5;
 }
 
 :where(.css-dev-only-do-not-override-1b0bdye).ant-divider-horizontal {
-    display: flex;
-    clear: both;
-    width: 90%;
-    min-width: 90%;
+  display: flex;
+  clear: both;
+  width: 90%;
+  min-width: 90%;
 }
 
 .right__chat__ct {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px 30px 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 30px 0px 30px;
 }
 
 .box__1 {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background-color: #F4F9FD;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: #f4f9fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .box__ {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .box__2 {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.botton__chat ul li ul li {
+  padding: 0px 15px !important;
+}
+
+.left__bt__chat {
+  width: 75%;
+  /* background-color: aqua; */
+}
+
+.right__bt__chat {
+  width: 25%;
+}
+
+.diveder__chat2 {
+  width: 1px;
+  height: auto;
+  background-color: #e6ebf5;
+}
+
+.calender__chat {
+  width: 15%;
+  height: 34px;
+  border-radius: 20px;
+  margin: 15px auto 15px auto;
+  border: 1px solid #e6ebf5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.type__search {
+  width: 90%;
+  height: 56px;
+  border-radius: 20px;
+  border: 1px solid #e6ebf5;
 }
