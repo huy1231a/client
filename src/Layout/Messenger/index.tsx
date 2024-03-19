@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './style.css'
 import {
   Avatar,
@@ -7,7 +7,6 @@ import {
   Input,
   Menu,
   MenuProps,
-  Modal,
   Typography,
 } from 'antd'
 import { svg__search, svg__filter, svg__dot, avart2, icon } from './Constans'
@@ -18,15 +17,10 @@ import {
   PlusOutlined,
 } from '@ant-design/icons'
 import BoxChat from './Boxchat'
-
-import Picker from 'emoji-picker-react'
 import EmojiPicker from 'emoji-picker-react'
+import ChatOnl from './ChatOnl'
 
 type MenuItem = Required<MenuProps>['items'][number]
-
-interface InputRef extends HTMLInputElement {
-  input: HTMLInputElement | null
-}
 
 function getItem(
   label: React.ReactNode,
@@ -141,39 +135,25 @@ const items: MenuProps['items'] = [
 const Messenger = () => {
   const { Title, Text } = Typography
 
-  const [key, setKey] = useState('')
+  const [key, setKey] = useState('6')
 
-  const [showPicker, setShowPicker] = useState<boolean>(false)
-  const [text, setText] = useState<string>('')
-  const inputRef = useRef<InputRef | null>({ input: null })
+  const [inputValue, setInputValue] = useState<string>('')
 
-  const handleEmojiSelect = (emoji: any) => {
-    const input = inputRef.current
-    if (input) {
-      const startPos =
-        input.selectionStart !== null ? input.selectionStart : text.length
-      const endPos =
-        input.selectionEnd !== null ? input.selectionEnd : text.length
-      const newText = text.slice(0, startPos) + emoji.emoji + text.slice(endPos)
-      setText(newText)
-      setShowPicker(false)
-    }
+  const handleEmojiClick = (emojiObject: any) => {
+    setInputValue(inputValue + emojiObject.emoji)
+    setShowPicker(false)
   }
 
-  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value)
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Backspace' && text === '') {
-      setText('')
-    }
-  }
+  const [showpick, setShowPicker] = useState<boolean>(false)
 
   const onClick: MenuProps['onClick'] = (e) => {
     setKey(e.key)
     console.log(e.key)
   }
+
+  useEffect(() => {
+    setKey('6')
+  }, [])
 
   return (
     <div className='mesenger'>
@@ -202,50 +182,78 @@ const Messenger = () => {
           </div>
         </div>
         <div className='diveder__chat'></div>
-        <div className='right__chat__ct'>
-          <div className='left__title'>
-            <Avatar style={{ width: 50, height: 50 }} src={avart2.avartar1} />
-            <div className='left__job__name'>
-              <span className='title'>Oscar Holloway</span>
-              <Text type='secondary'>UI/UX Designer</Text>
+        {key === '6' && (
+          <div className='right__chat__ct'>
+            <div className='left__title'>
+              <Avatar style={{ width: 50, height: 50 }} src={avart2.avartar1} />
+              <div className='left__job__name'>
+                <span className='title'>Oscar Holloway</span>
+                <Text type='secondary'>UI/UX Designer</Text>
+              </div>
+            </div>
+            <div>
+              <div className='box__'>
+                <div className='box__1'>{svg__search}</div>
+                <div className='box__1'>{svg__filter}</div>
+                <div className='box__1'>{svg__dot}</div>
+              </div>
             </div>
           </div>
-          <div>
-            <div className='box__'>
-              <div className='box__1'>{svg__search}</div>
-              <div className='box__1'>{svg__filter}</div>
-              <div className='box__1'>{svg__dot}</div>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
       <Divider style={{ margin: '0px auto' }} />
       <div className='botton__chat'>
         <div className='right__bt__chat'>
-          <Menu mode='inline' onClick={onClick} items={items} />
+          <Menu
+            mode='inline'
+            onClick={onClick}
+            items={items}
+            defaultSelectedKeys={['6']}
+            defaultOpenKeys={['sub2']}
+          />
         </div>
         <div className='diveder__chat2'></div>
         <div className='left__bt__chat'>
-          <div className='calender__chat'>
-            <Text type='secondary' style={{ fontWeight: 600 }}>
-              Fridey, September 8
-            </Text>
-          </div>
-          <div>aa</div>
-          <div className='type__search'>
-            <Button onClick={() => setShowPicker(true)}>{icon.icon1}</Button>
-            <Input
-              ref={(ref) => {
-                if (ref) inputRef.current = ref.input
-              }}
-              value={text}
-              onChange={handleTextChange}
-              onKeyDown={handleKeyDown}
-              placeholder='Type something...'
-            />
-
-            {showPicker && <EmojiPicker onEmojiClick={handleEmojiSelect} />}
-          </div>
+          {key === '6' && (
+            <>
+              <div className='calender__chat'>
+                <Text type='secondary' style={{ fontWeight: 600 }}>
+                  Fridey, September 8
+                </Text>
+              </div>
+              <ChatOnl
+                name={'Olive Dixon'}
+                time={'12:04 AM'}
+                text={
+                  'Hi, Evan! Nice to meet you tooI will send you all the files I have for this project. After that, we can call and discuss. I will answer all your questions! OK?'
+                }
+                avatar={avart2.avartar1}
+              />
+              <div className='type__search'>
+                <div className='link__acct'>
+                  <Button>{icon.icon3}</Button>
+                  <Button>{icon.icon4}</Button>
+                  <Button>{icon.icon5}</Button>
+                </div>
+                <Input
+                  value={inputValue}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setInputValue(e.target.value)
+                  }
+                  className='input__chat'
+                  placeholder='Type your message here…'
+                  size='small'
+                />
+                <div className='input__btn'>
+                  <Button className='' onClick={() => setShowPicker(true)}>
+                    {icon.icon1}
+                  </Button>
+                  <Button type='primary'>{icon.icon2}</Button>
+                </div>
+              </div>
+              {showpick && <EmojiPicker onEmojiClick={handleEmojiClick} />}
+            </>
+          )}
         </div>
       </div>
     </div>

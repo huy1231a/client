@@ -75,11 +75,6 @@ const Siderbar = () => {
       label: <Link to={'/messenger'}>Messenger</Link>,
     },
     {
-      key: 'infoportal',
-      icon: <UserSwitchOutlined />,
-      label: <Link to={'/infoportal'}>Info Portal</Link>,
-    },
-    {
       key: '8',
       icon: <UserSwitchOutlined />,
       label: (

@@ -35,7 +35,7 @@ function App(): JSX.Element {
     setToken(null)
   }
 
-  const auth = true
+  const auth = !!token
   return (
     <>
       {auth ? (

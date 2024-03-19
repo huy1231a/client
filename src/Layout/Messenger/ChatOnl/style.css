@@ -1,0 +1,33 @@
+.first__chat {
+  width: 90%;
+  height: 100px;
+  margin: 10px auto 60px auto;
+}
+
+.info__chat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.info__chat span {
+  color: #7d8592;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.info__chat h3 {
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.name__time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ct__chat {
+  margin-left: 74px;
+}
