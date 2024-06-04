@@ -47,7 +47,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Medical App Team'
           time='12:04'
           numberOfNoti={24}
@@ -59,7 +59,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Food Delivery Service'
           time='12:04'
           numberOfNoti={1}
@@ -72,7 +72,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Garrett Watson'
           time='12:04'
         />
@@ -82,7 +82,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Caroline Santos'
           time='12:04'
         />
@@ -92,7 +92,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Leon Nunez'
           time='12:04'
         />
@@ -102,7 +102,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Oscar Holloway'
           time='12:04'
         />
@@ -112,7 +112,7 @@ const items: MenuProps['items'] = [
     getItem(
       <>
         <BoxChat
-          messageBox='dit cu chung may may thag ngu'
+          messageBox='hello everyone'
           nameBox='Justin Huy'
           time='12:04'
         />
